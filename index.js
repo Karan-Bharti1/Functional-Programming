@@ -64,8 +64,26 @@ const groupedArray = pets.reduce((acc, curr) => {
     if (!acc[curr.type]) {
         acc[curr.type] = [];
     }
-    acc[curr.type].push(acc[curr]); 
+    acc[curr.type].push(curr); 
     return acc;
 }, {});
 
 console.log(groupedArray);
+
+
+//Given an array of objects, build an object keyed by a unique identifier (sku).
+const products1 = [
+  { sku: 'A123', name: 'Socks', price: 5 },
+  { sku: 'B456', name: 'Hat', price: 15 }
+];
+
+// expected result:
+// {
+//   A123: { sku: 'A123', name: 'Socks', price: 5 },
+//   B456: { sku: 'B456', name: 'Hat', price: 15 }
+// }
+const productsModel=products1.reduce((acc,curr)=>{
+acc[curr.sku]=curr
+    return acc
+},{})
+console.log(productsModel)
