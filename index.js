@@ -191,3 +191,30 @@ const requiredArray=partcipantsObjArray.reduce((acc,curr)=>{
   return acc
 },{})
 console.log(requiredArray)
+
+// Given an array. Return executives whose total sales amount is more than 7000.
+const sales1 = [
+  { executive: 'Rohit', amount: 5000 },
+  { executive: 'Sneha', amount: 4000 },
+  { executive: 'Rohit', amount: 3000 },
+  { executive: 'Sneha', amount: 1000 },
+  { executive: 'Arjun', amount: 6000 }
+];
+const salesPersonObject=sales1.reduce((acc,curr)=>{
+acc[curr.executive]=(acc[curr.executive]||0)+curr.amount
+return acc
+},{})
+console.log(salesPersonObject)
+const salesPersonObjectKeys=Object.keys(salesPersonObject)
+const salesMoreThan8000=salesPersonObjectKeys.reduce((acc,curr)=>{
+  if(salesPersonObject[curr]>7000){
+    acc[curr]=salesPersonObject[curr]
+  }
+  return acc
+},{})
+console.log(salesMoreThan8000)
+
+// Expected Output
+// {
+//   Rohit: 8000
+// }
