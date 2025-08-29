@@ -118,3 +118,20 @@ acc[curr.type]=(acc[curr.type]||0 )+1
 return acc
 },{})
 console.log(petsCount)
+
+//Given the sales records, how much sales amount was there in each region?
+const sales = [
+	{ region: 'North', amount: 100 },
+	{ region: 'South', amount:  80 },
+	{ region: 'North', amount: 120 },
+	{ region: 'East',  amount:  75 },
+	{ region: 'South', amount:  20 }
+]
+
+// expected result:
+// { North: 220, South: 100, East: 75 }
+const salesRecord=sales.reduce((acc,curr)=>{
+  acc[curr.region]=(acc[curr.amount]||0) +curr.amount
+return acc
+},{})
+console.log(salesRecord)
