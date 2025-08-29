@@ -27,3 +27,13 @@ const nested = [[1, 2], [3, 4], [5]];
 // expected result: [1, 2, 3, 4, 5]
 const flattened=[].concat(...nested)
 console.log(flattened)
+
+//Given an array of objects, pull out the names into a new array.
+const users = [
+  { id: 1, name: 'Alice' },
+  { id: 2, name: 'Bob' },
+  { id: 3, name: 'Carol' }
+];
+// expected result: ['Alice', 'Bob', 'Carol']
+const namesArray=users.map(user=>user.name)
+console.log(namesArray)
