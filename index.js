@@ -20,3 +20,10 @@ const numericAverage=scores.reduce((acc,curr)=>{
     return acc
 },0)/scores.length
 console.log(numericAverage)
+
+
+//Given a two-dimensional array, flatten it by one level.
+const nested = [[1, 2], [3, 4], [5]];
+// expected result: [1, 2, 3, 4, 5]
+const flattened=[].concat(...nested)
+console.log(flattened)
