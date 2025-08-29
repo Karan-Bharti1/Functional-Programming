@@ -46,3 +46,26 @@ acc[curr]=(acc[curr] || 0)+1
 return acc
 },{})
 console.log(countFruits)
+
+// Given an array of objects, group them by type property.
+const pets = [
+  { name: 'Spot', type: 'dog' },
+  { name: 'Mittens', type: 'cat' },
+  { name: 'Rover', type: 'dog' },
+  { name: 'Whiskers', type: 'cat' }
+];
+
+// expected result:
+// {
+//   dog: [ { name: 'Spot', type: 'dog' }, { name: 'Rover', type: 'dog' } ],
+//   cat: [ { name: 'Mittens', type: 'cat' }, { name: 'Whiskers', type: 'cat' } ]
+// }
+const groupedArray = pets.reduce((acc, curr) => {
+    if (!acc[curr.type]) {
+        acc[curr.type] = [];
+    }
+    acc[curr.type].push(acc[curr]); 
+    return acc;
+}, {});
+
+console.log(groupedArray);
