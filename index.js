@@ -149,3 +149,45 @@ return  acc
 },{})
 console.log(countstrCharacters) 
 
+
+// Given an array. Return only the users who are active.
+const users1 = [
+  { name: 'Anjali', active: true },
+  { name: 'Raj', active: false },
+  { name: 'Meena', active: true }
+];
+
+// Expected Output
+// ["Anjali", "Meena"]
+const activeUser=users1.filter(user=>user.active).map(user=>user.name)
+console.log(activeUser)
+
+//You are given a list of volunteers and the number of hours they contributed to an event. Return an object of volunteers who contributed more than 8 hours in total.
+
+const participation = [
+  { name: 'Rahul', hours: 6 },
+  { name: 'Neha', hours: 4 },
+  { name: 'Ankit', hours: 3 },
+  { name: 'Rahul', hours: 5 },
+  { name: 'Neha', hours: 2 },
+  { name: 'Anjali', hours: 9 }
+];
+
+// Expected Output:
+// {
+//   Rahul: 11,
+//   Anjali: 9
+// }
+const partcipantsObj=participation.reduce((acc,curr)=>{
+  acc[curr.name]=(acc[curr.name]||0)+curr.hours
+return acc
+},{})
+console.log(partcipantsObj)
+const partcipantsObjArray=Object.keys(partcipantsObj)
+const requiredArray=partcipantsObjArray.reduce((acc,curr)=>{
+  if(partcipantsObj[curr]>8){
+    acc[curr]=partcipantsObj[curr]
+  }
+  return acc
+},{})
+console.log(requiredArray)
