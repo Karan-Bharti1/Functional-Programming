@@ -37,3 +37,12 @@ const users = [
 // expected result: ['Alice', 'Bob', 'Carol']
 const namesArray=users.map(user=>user.name)
 console.log(namesArray)
+
+//Given an array of strings, build an object that counts how many times each string appears.
+const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+// expected result: { apple: 3, banana: 2, orange: 1 }
+const countFruits=fruits.reduce((acc,curr)=>{
+acc[curr]=(acc[curr] || 0)+1
+return acc
+},{})
+console.log(countFruits)
