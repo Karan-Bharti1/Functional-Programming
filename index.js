@@ -87,3 +87,17 @@ acc[curr.sku]=curr
     return acc
 },{})
 console.log(productsModel)
+
+//Given the array of votes, calculate how many votes did each candidate receive?
+const votes = [
+  'Alice', 'Bob', 'Alice', 'Carol',
+  'Bob', 'Alice', 'Carol', 'Bob'
+];
+
+// expected result:
+// { Alice: 3, Bob: 3, Carol: 2 }
+const countVotes=votes.reduce((acc,curr)=>{
+  acc[curr]=(acc[curr]||0)+1
+  return acc
+},{})
+console.log(countVotes)
