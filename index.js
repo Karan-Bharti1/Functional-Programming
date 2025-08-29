@@ -119,7 +119,7 @@ return acc
 },{})
 console.log(petsCount)
 
-//Given the sales records, how much sales amount was there in each region?
+//Given th9e sales records, how much sales amount was there in each region?
 const sales = [
 	{ region: 'North', amount: 100 },
 	{ region: 'South', amount:  80 },
@@ -135,3 +135,17 @@ const salesRecord=sales.reduce((acc,curr)=>{
 return acc
 },{})
 console.log(salesRecord)
+
+//  Given the string `'mississippi'`, how many times does each character appear?
+    
+    
+    // expected result:
+    // { m: 1, i: 4, s: 4, p: 2 }
+const str="mississippi"
+const strArray=str.split("")
+const countstrCharacters=strArray.reduce((acc,curr)=>{
+acc[curr]=(acc[curr] || 0)+1
+return  acc
+},{})
+console.log(countstrCharacters) 
+
