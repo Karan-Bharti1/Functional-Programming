@@ -101,3 +101,20 @@ const countVotes=votes.reduce((acc,curr)=>{
   return acc
 },{})
 console.log(countVotes)
+
+//Given the array of pet objects, how many pets are there of each type?
+const pets1 = [
+  { name: 'Fido', type: 'dog' },
+  { name: 'Mittens', type: 'cat' },
+  { name: 'Rex', type: 'dog' },
+  { name: 'Whiskers', type: 'cat' },
+  { name: 'Goldie', type: 'fish' }
+];
+
+// expected result:
+// { dog: 2, cat: 2, fish: 1 }
+const petsCount=pets1.reduce((acc,curr)=>{
+acc[curr.type]=(acc[curr.type]||0 )+1
+return acc
+},{})
+console.log(petsCount)
