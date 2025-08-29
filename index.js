@@ -5,3 +5,8 @@ const totalSum=nums.reduce((acc,curr)=>{
 return acc
 },0)
 console.log(totalSum)
+
+//Given an array of numbers, find the product of all elements.
+const nums1 = [2, 3, 4];
+const product=nums1.reduce((acc,curr)=>acc*curr,1)
+console.log(product)
